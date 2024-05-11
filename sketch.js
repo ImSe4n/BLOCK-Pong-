@@ -80,3 +80,12 @@ function setup() {
   lotsOfBlocks3.setCollider("circle", 0, 0, 30);
   spriteBalls.bounce(lotsOfBlocks3);
 }
+
+function draw() {
+  background(255, 255, 255);
+  stroke(0);
+  rect(0, 0, 800, 600);
+  noStroke();
+  //function for the slider
+  sliders();
+}
