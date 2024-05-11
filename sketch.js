@@ -36,3 +36,9 @@ let buttonLives;
 let buttonReset;
 let overBox8 = false;
 let rightLevel = false;
+
+//preload ball and block animations
+function preload() {
+  ballImage = loadImage('Ball.png');
+  fadingBlock = loadAnimation('Block1.png', 'Block1.png', 'Block2.png', 'Block2.png', 'Block3.png', 'Block3.png', 'Block4.png', 'Block4.png', 'Block5.png', 'Block5.png', 'Block6.png', 'Block6.png', 'Block7.png', 'Block7.png', 'Block8.png', 'Block8.png', 'Block9.png', 'Block9.png', 'Block10.png', 'Block10.png', 'Block11.png', 'Block11.png', 'Block12.png', 'Block12.png', "Block13.png", "Block13.png");
+}
