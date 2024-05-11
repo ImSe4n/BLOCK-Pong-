@@ -88,4 +88,41 @@ function draw() {
   noStroke();
   //function for the slider
   sliders();
+
+    //drawSprites() is necessary in order to see the sprites on the screen 
+  //home screen
+  if (level === 0) {
+    //while mousePressed();
+    //background(255,255,255);
+    //Show the instructions to the user 
+    rightLevel = false;
+    overBox6 = false;
+    overBox7 = false;
+    levelZero = false;
+    fill(0);
+    textAlign(CENTER, CENTER);
+    textSize(32);
+    text("Welcome to Block Pong. \n 1. Press on level of difficulty to begin", width / 2, height / 5);
+    /*--------------------END INSTRUCTIONS--------------------*/
+    // Test if the cursor is over the boxes
+    boxBeginner();
+    boxConfigureOptions();
+    boxEasy();
+    boxNormal();
+    boxHard();
+    boxImpossible();
+    //button for lives
+    text(val, 10, 450);
+    buttonLives.position(10, 400);
+    buttonReset.position(10, 470);
+    textSize(25);
+    stroke(156, 39, 176);
+    fill(0);
+    text("Use the mouse!", 700, 500);
+
+
+    /*--------------------GAME--------------------*/
+    //First level of gameplay
+}
+
 }
