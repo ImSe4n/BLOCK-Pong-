@@ -141,6 +141,25 @@ function draw() {
   onWin();
 
   //Win screen (making it a level works)
+} else if (level === 2) {
+  overBox6 = false;
+  overBox2 = false;
+  overBox3 = false;
+  overBox7 = false;
+  overBox8 = false;
+  //remove the slider if there is one
+  sliderRemoval();
+  background((173, 216, 230))
+  textSize(75);
+  text("You Won!!! \n Next level?", 250, 150);
+  //button for pressing no
+  noButton();
+  if (levelZero === true) {
+    level = 0;
+  }
+  //button for pressing yes
+  yesButton();
+  //losing screen
 }
 
 }
