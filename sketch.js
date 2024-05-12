@@ -232,3 +232,19 @@ function speedBallText() {
   text(nf("Ball Speed: " + timeGame, 1, 2), width / 2 - 100, 50);
 
 }
+//function for position of bot
+function botPosition() {
+  //set the attraction to the y of ball
+  if (spriteBalls.position.y < 0 + padLength / 2) {
+    spriteBot.friction = frictionBot;
+    //so it does not go off screen
+    spriteBot.attractionPoint(speedBot, 800 - padWidth / 2, spriteBalls.position.y + padLength / 2);
+  } else if (spriteBalls.position.y > height - padLength / 2) {
+    spriteBot.friction = frictionBot;
+    spriteBot.attractionPoint(speedBot, 800 - padWidth / 2, spriteBalls.position.y - padLength / 2);
+  } else {
+    spriteBot.friction = frictionBot; // update Bot friction value from Slider variable
+    spriteBot.attractionPoint(speedBot, 800 - padWidth / 2, spriteBalls.position.y);
+    // 1 value: update Bot speed value from slider variable, 3 value: update attraction point: player's current y value
+  }
+}
