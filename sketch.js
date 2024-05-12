@@ -260,3 +260,15 @@ function sliders() {
     //  text("Friction: " + frictionBot, 400, 55); // print string and variable at x=400, y=55
   }
 }
+
+//Set position of the player 
+function spritePosition() {
+  //player cannot go out of screen
+  if (mouseY >= height - padLength / 2) {
+    boxSprite.position.y = height - padLength / 2;
+  } else if (mouseY <= 0 + padLength / 2) {
+    boxSprite.position.y = 0 + padLength / 2
+  } else {
+    boxSprite.position.y = mouseY;
+  }
+}
