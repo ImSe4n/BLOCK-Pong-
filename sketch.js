@@ -89,7 +89,7 @@ function draw() {
   //function for the slider
   sliders();
 
-    //drawSprites() is necessary in order to see the sprites on the screen 
+  //drawSprites() is necessary in order to see the sprites on the screen 
   //home screen
   if (level === 0) {
     //while mousePressed();
@@ -123,105 +123,112 @@ function draw() {
 
     /*--------------------GAME--------------------*/
     //First level of gameplay
-} else if (level === 1) {
-  overBox8 = false;
-  //make the button out of screen(will do not anything anyways as it is only used in home level)
-  buttonLives.position(10000, 10000);
-  buttonReset.position(10000, 10000);
-  //let ball begin moving
-  onStart();
-  //show speed of the ball and only show 2 digits after the decimal point using nf() 
-  speedBallText();
-  drawSprites();
-  ballMovement();
-  time();
-  spritePosition();
-  botPosition();
-  drawScore();
-  onWin();
-
-  //Win screen (making it a level works)
-} else if (level === 2) {
-  overBox6 = false;
-  overBox2 = false;
-  overBox3 = false;
-  overBox7 = false;
-  overBox8 = false;
-  //remove the slider if there is one
-  sliderRemoval();
-  background((173, 216, 230))
-  textSize(75);
-  text("You Won!!! \n Next level?", 250, 150);
-  //button for pressing no
-  noButton();
-  if (levelZero === true) {
-    level = 0;
-  }
-  //button for pressing yes
-  yesButton();
-  //losing screen
-} else if (level === 3) {
-  yourScore = 0;
-  opponentScore = 0;
-  sliderRemoval();
-  background(15, 15, 24);
-  textSize(75);
-  fill(255, 255, 255);
-  text("Sorry, You Lost", 150, 150);
-  //test if mouse is over box
-  if (
-    mouseX > bx - 150 - boxSize &&
-    mouseX < bx - 150 + boxSize &&
-    mouseY > by + 250 - boxSize / 2 &&
-    mouseY < by + 250 + boxSize / 2
-  ) {
-    overBox8 = true
-    stroke(255);
-    fill(173, 255, 47);
-  } else {
-    stroke(156, 39, 176);
-    fill(173, 255, 47);
+  } else if (level === 1) {
     overBox8 = false;
+    //make the button out of screen(will do not anything anyways as it is only used in home level)
+    buttonLives.position(10000, 10000);
+    buttonReset.position(10000, 10000);
+    //let ball begin moving
+    onStart();
+    //show speed of the ball and only show 2 digits after the decimal point using nf() 
+    speedBallText();
+    drawSprites();
+    ballMovement();
+    time();
+    spritePosition();
+    botPosition();
+    drawScore();
+    onWin();
+
+    //Win screen (making it a level works)
+  } else if (level === 2) {
+    overBox6 = false;
+    overBox2 = false;
+    overBox3 = false;
+    overBox7 = false;
+    overBox8 = false;
+    //remove the slider if there is one
+    sliderRemoval();
+    background((173, 216, 230))
+    textSize(75);
+    text("You Won!!! \n Next level?", 250, 150);
+    //button for pressing no
+    noButton();
+    if (levelZero === true) {
+      level = 0;
+    }
+    //button for pressing yes
+    yesButton();
+    //losing screen
+  } else if (level === 3) {
+    yourScore = 0;
+    opponentScore = 0;
+    sliderRemoval();
+    background(15, 15, 24);
+    textSize(75);
+    fill(255, 255, 255);
+    text("Sorry, You Lost", 150, 150);
+    //test if mouse is over box
+    if (
+      mouseX > bx - 150 - boxSize &&
+      mouseX < bx - 150 + boxSize &&
+      mouseY > by + 250 - boxSize / 2 &&
+      mouseY < by + 250 + boxSize / 2
+    ) {
+      overBox8 = true
+      stroke(255);
+      fill(173, 255, 47);
+    } else {
+      stroke(156, 39, 176);
+      fill(173, 255, 47);
+      overBox8 = false;
+    }
+    // Draw the box
+    rect(bx - 100, by + 250, boxSize, boxSize / 2);
+    textSize(20);
+    text("Try Again", bx - 145, by + 255);
+    //second level of gameplay
+  } else if (level === 4) {
+    overBox8 = false;
+    //set the block positions that will affect the ball's path
+    lotsOfBlocks.position.x = width / 2;
+    lotsOfBlocks.position.y = height / 2;
+    lotsOfBlocks2.position.x = width / 4;
+    lotsOfBlocks2.position.y = height / 2;
+    lotsOfBlocks3.position.x = width - width / 4;
+    lotsOfBlocks3.position.y = height / 2;
+    spriteBalls.bounce(lotsOfBlocks);
+    spriteBalls.bounce(lotsOfBlocks2);
+    spriteBalls.bounce(lotsOfBlocks3);
+    if (spriteBalls.bounce) {
+      spriteBalls.addSpeed(5, random(360));
+      spriteBalls.position.x <= width;
+      spriteBalls.position.y <= height;
+    }
+    onStart();
+    //show speed of the ball and only show 2 digits after the decimal point using nf() 
+    speedBallText();
+    drawSprites();
+    ballMovement();
+    time();
+    spritePosition();
+    botPosition();
+    drawScore();
+    onWin();
+    rightLevel = true;
+    //win screen for the second level that directs the user to home screen
+  } else if (level === 5) {
+    background(173, 216, 230);
+    fill(255, 255, 255);
+    textSize(40);
+    text("Congrats!! \n Press Enter \n to try again", 30, 30);
   }
-  // Draw the box
-  rect(bx - 100, by + 250, boxSize, boxSize / 2);
-  textSize(20);
-  text("Try Again", bx - 145, by + 255);
-  //second level of gameplay
-} else if (level === 4) {
-  overBox8 = false;
-  //set the block positions that will affect the ball's path
-  lotsOfBlocks.position.x = width / 2;
-  lotsOfBlocks.position.y = height / 2;
-  lotsOfBlocks2.position.x = width / 4;
-  lotsOfBlocks2.position.y = height / 2;
-  lotsOfBlocks3.position.x = width - width / 4;
-  lotsOfBlocks3.position.y = height / 2;
-  spriteBalls.bounce(lotsOfBlocks);
-  spriteBalls.bounce(lotsOfBlocks2);
-  spriteBalls.bounce(lotsOfBlocks3);
-  if (spriteBalls.bounce) {
-    spriteBalls.addSpeed(5, random(360));
-    spriteBalls.position.x <= width;
-    spriteBalls.position.y <= height;
-  }
-  onStart();
-  //show speed of the ball and only show 2 digits after the decimal point using nf() 
-  speedBallText();
-  drawSprites();
-  ballMovement();
-  time();
-  spritePosition();
-  botPosition();
-  drawScore();
-  onWin();
-  rightLevel = true;
-  //win screen for the second level that directs the user to home screen
-} else if (level === 5) {
-  background(173, 216, 230);
-  fill(255, 255, 255);
-  textSize(40);
-  text("Congrats!! \n Press Enter \n to try again", 30, 30);
+
 }
+
+//function to show the speed of the ball
+function speedBallText() {
+  textSize(25);
+  text(nf("Ball Speed: " + timeGame, 1, 2), width / 2 - 100, 50);
 
 }
