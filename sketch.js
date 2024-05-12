@@ -217,6 +217,11 @@ function draw() {
   onWin();
   rightLevel = true;
   //win screen for the second level that directs the user to home screen
+} else if (level === 5) {
+  background(173, 216, 230);
+  fill(255, 255, 255);
+  textSize(40);
+  text("Congrats!! \n Press Enter \n to try again", 30, 30);
 }
 
 }
