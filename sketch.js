@@ -160,6 +160,34 @@ function draw() {
   //button for pressing yes
   yesButton();
   //losing screen
+} else if (level === 3) {
+  yourScore = 0;
+  opponentScore = 0;
+  sliderRemoval();
+  background(15, 15, 24);
+  textSize(75);
+  fill(255, 255, 255);
+  text("Sorry, You Lost", 150, 150);
+  //test if mouse is over box
+  if (
+    mouseX > bx - 150 - boxSize &&
+    mouseX < bx - 150 + boxSize &&
+    mouseY > by + 250 - boxSize / 2 &&
+    mouseY < by + 250 + boxSize / 2
+  ) {
+    overBox8 = true
+    stroke(255);
+    fill(173, 255, 47);
+  } else {
+    stroke(156, 39, 176);
+    fill(173, 255, 47);
+    overBox8 = false;
+  }
+  // Draw the box
+  rect(bx - 100, by + 250, boxSize, boxSize / 2);
+  textSize(20);
+  text("Try Again", bx - 145, by + 255);
+  //second level of gameplay
 }
 
 }
