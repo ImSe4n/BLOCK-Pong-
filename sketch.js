@@ -248,3 +248,15 @@ function botPosition() {
     // 1 value: update Bot speed value from slider variable, 3 value: update attraction point: player's current y value
   }
 }
+
+//set value of Bot speed and Bot friction from values of sliders and print them on canvas 
+function sliders() {
+  if (turnOnSlider === true) {
+    speedBot = sliderBotSpeed.value(); // value from Bot speed slider stored in variable speedBot
+    // frictionBot = sliderBotFriction.value(); // value from Bot friction slider stored in variable frictionBot 
+    textSize(20); // set font size to 20 
+    fill(0, 0, 0);
+    text("Speed: " + speedBot, 20, 55); // print string and variable at x=20, y=55 
+    //  text("Friction: " + frictionBot, 400, 55); // print string and variable at x=400, y=55
+  }
+}
