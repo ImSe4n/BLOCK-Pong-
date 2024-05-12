@@ -188,6 +188,35 @@ function draw() {
   textSize(20);
   text("Try Again", bx - 145, by + 255);
   //second level of gameplay
+} else if (level === 4) {
+  overBox8 = false;
+  //set the block positions that will affect the ball's path
+  lotsOfBlocks.position.x = width / 2;
+  lotsOfBlocks.position.y = height / 2;
+  lotsOfBlocks2.position.x = width / 4;
+  lotsOfBlocks2.position.y = height / 2;
+  lotsOfBlocks3.position.x = width - width / 4;
+  lotsOfBlocks3.position.y = height / 2;
+  spriteBalls.bounce(lotsOfBlocks);
+  spriteBalls.bounce(lotsOfBlocks2);
+  spriteBalls.bounce(lotsOfBlocks3);
+  if (spriteBalls.bounce) {
+    spriteBalls.addSpeed(5, random(360));
+    spriteBalls.position.x <= width;
+    spriteBalls.position.y <= height;
+  }
+  onStart();
+  //show speed of the ball and only show 2 digits after the decimal point using nf() 
+  speedBallText();
+  drawSprites();
+  ballMovement();
+  time();
+  spritePosition();
+  botPosition();
+  drawScore();
+  onWin();
+  rightLevel = true;
+  //win screen for the second level that directs the user to home screen
 }
 
 }
