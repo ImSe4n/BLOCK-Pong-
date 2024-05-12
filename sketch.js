@@ -123,6 +123,24 @@ function draw() {
 
     /*--------------------GAME--------------------*/
     //First level of gameplay
+} else if (level === 1) {
+  overBox8 = false;
+  //make the button out of screen(will do not anything anyways as it is only used in home level)
+  buttonLives.position(10000, 10000);
+  buttonReset.position(10000, 10000);
+  //let ball begin moving
+  onStart();
+  //show speed of the ball and only show 2 digits after the decimal point using nf() 
+  speedBallText();
+  drawSprites();
+  ballMovement();
+  time();
+  spritePosition();
+  botPosition();
+  drawScore();
+  onWin();
+
+  //Win screen (making it a level works)
 }
 
 }
