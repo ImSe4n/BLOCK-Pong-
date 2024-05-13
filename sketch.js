@@ -611,3 +611,9 @@ function onWin() {
     opponentScore = 0
   }
 }
+
+//set the value of lives
+function changeBG() {
+  val += 1;
+  print(val);
+}
