@@ -338,3 +338,25 @@ function keyPressed() {
     }
   }
 }
+
+//box for the beginner level
+function boxBeginner() {
+  if (//detect if over beginner box
+    mouseX > bx - boxSize &&
+    mouseX < bx + boxSize &&
+    mouseY > by - boxSize / 2 &&
+    mouseY < by + boxSize / 2
+  ) {
+    overBox = true;
+    stroke(255);
+    fill(244, 122, 158);
+  } else {
+    stroke(156, 39, 176);
+    fill(244, 122, 158);
+    overBox = false;
+  }
+  // Draw the box
+  rect(bx, by, boxSize, boxSize / 2);
+  textSize(20);
+  text("Beginner", bx, by + 5);
+}
