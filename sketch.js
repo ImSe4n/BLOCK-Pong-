@@ -575,3 +575,11 @@ function configureSlider() {
     // sliderBotFriction.style("width", "100px"); // set slider width at 100 pixels wide
   }
 }
+
+//to remove the configure slider
+function sliderRemoval() {
+  turnOnSlider = false;
+  if (yesSlider === true) {
+    sliderBotSpeed.remove();
+  }
+}
