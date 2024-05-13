@@ -272,3 +272,44 @@ function spritePosition() {
     boxSprite.position.y = mouseY;
   }
 }
+
+function ballMovement() {
+  spriteBalls.setSpeed(timeGame);
+  //makes sprite2 bounce of the borders and give it a random velocity
+  if (spriteBalls.overlap(boxSprite)) {
+    spriteBalls.position.x = padWidth + ballDiameter;
+    spriteBalls.velocity.x = spriteBalls.velocity.x;
+    spriteBalls.setSpeed(timeGame, -79 + random(158));
+    // bounce of pad
+  } else if (spriteBalls.position.x <= 0 + spriteBalls.width / 2) {
+    // if ball hits the wall, lose a point
+    timeGame = 8
+    spriteBalls.position.x = width / 2;
+    spriteBalls.position.y = height / 2;
+    spriteBalls.setSpeed(timeGame, -180);
+    timeGame = 8;
+    opponentScore++;
+    console.log(opponentScore);
+    // else lose a point
+  }
+  if (spriteBalls.overlap(spriteBot)) {
+    spriteBalls.position.x = width - padWidth - ballDiameter;
+    spriteBalls.velocity.x = spriteBalls.velocity.x;
+    spriteBalls.setSpeed(timeGame, 101 + random(158));
+    //
+  } else if (spriteBalls.position.x >= width + spriteBalls.width / 2) {//reset speed ball
+    timeGame = 8
+    spriteBalls.position.x = width / 2;
+    spriteBalls.position.y = height / 2;
+    spriteBalls.setSpeed(timeGame, 0);
+    timeGame = 8
+    yourScore++;
+    //continue direction
+  } else if (spriteBalls.position.y >= height - spriteBalls.height / 2) {
+    spriteBalls.velocity.y = -spriteBalls.velocity.y;
+
+  } else if (spriteBalls.position.y <= 0 + spriteBalls.height / 2) {
+    spriteBalls.velocity.y = -spriteBalls.velocity.y;
+
+  }
+}
