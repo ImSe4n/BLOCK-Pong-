@@ -313,3 +313,8 @@ function ballMovement() {
 
   }
 }
+
+//acceleration of Ball as the speed variable increases every time the time function runs
+function time() {
+  timeGame = timeGame + 0.01
+}
