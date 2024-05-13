@@ -318,3 +318,10 @@ function ballMovement() {
 function time() {
   timeGame = timeGame + 0.01
 }
+
+//draw the score of player and opponent
+function drawScore() {
+  textSize(25);
+  text(opponentScore, width / 2 + 350, 20);
+  text(yourScore, width / 2 - 350, 20);
+}
