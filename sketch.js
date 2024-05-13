@@ -446,3 +446,26 @@ function boxImpossible() {
   textSize(20);
   text("Impossible", bx, by + 285);
 }
+
+//box for the options
+function boxConfigureOptions() {
+  if (
+    mouseX > cx - boxSize &&
+    mouseX < cx + boxSize &&
+    mouseY > cy - boxSize / 2 &&
+    mouseY < cy + boxSize / 2
+  ) {
+    overBox1 = true;
+    stroke(255);
+    fill(244, 122, 158);
+  } else {
+    stroke(156, 39, 176);
+    fill(244, 122, 158);
+    overBox1 = false;
+  }
+  // Draw the box
+  rect(cx, cy, boxSize, boxSize / 2);
+  textSize(14);
+  noFill();
+  text("Configure Options", cx + 2, cy);
+}
