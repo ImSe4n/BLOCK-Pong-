@@ -515,3 +515,50 @@ function yesButton() {
   textSize(20);
   text("Yes", bx + 100, by + 145);
 }
+
+//mousepressed function for if the mouse is over the box, it will set the difficulty, same as if pressing no, level will be reset to home screen. 
+function mousePressed() {
+  if (overBox === true) {
+    level = 1;
+    speedBot = 1;
+  }
+  if (overBox1 === true) {
+    level = 0;
+    yesSlider = true;
+    turnOnSlider = true;
+    configureSlider();
+    print("Pressed button 1")
+  }
+  if (overBox2 === true) {
+    level = 1;
+    speedBot = 2;
+  }
+  if (overBox3 === true) {
+    level = 1;
+    speedBot = 3;
+  }
+  if (overBox4 === true) {
+    level = 1;
+    speedBot = 4;
+  }
+  if (overBox5 === true) {
+    level = 1;
+    speedBot = 5;
+  }
+  if (overBox6 === true) {
+    levelZero = true;
+  }
+  if (overBox7 === true) {
+    level = 4;
+    //overBox = false;
+  }
+  if (overBox8 === true) {
+    if (rightLevel === true) {
+      level = 4;
+    } else {
+      level = 1;
+    }
+    yourScore = 0;
+    opponentScore = 0;
+  }
+}
