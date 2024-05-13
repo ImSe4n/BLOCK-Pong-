@@ -562,3 +562,16 @@ function mousePressed() {
     opponentScore = 0;
   }
 }
+
+// create slider to adjust Bot speed (configure)
+function configureSlider() {
+  if (yesSlider === true) {
+    sliderBotSpeed = createSlider(0, 5, 1, 0.1); // range: 0 - 5, start at 1, adjust by 0.1 
+    sliderBotSpeed.position(10, 20); // put slider on canvas at x=10, y=10, 
+    sliderBotSpeed.style("width", "100px"); // set slider width at 180 pixels
+    // create slider to adjust Bot friction 
+    // sliderBotFriction = createSlider(0, 1, 0.2, 0.1); // range: 0 - 1, start at 0.2, adjust by 0.1 
+    // sliderBotFriction.position(400, 10); // place slider on canvas at x=400, y = 10 
+    // sliderBotFriction.style("width", "100px"); // set slider width at 100 pixels wide
+  }
+}
