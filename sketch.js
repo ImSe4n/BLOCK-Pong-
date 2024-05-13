@@ -583,3 +583,14 @@ function sliderRemoval() {
     sliderBotSpeed.remove();
   }
 }
+
+//set the speed of ball at the beginning
+var onStart = (function() {
+  var executed = false;
+  return function() {
+    if (!executed) {
+      executed = true;
+      spriteBalls.setSpeed(8, random(360));//a speed of 8 and is goes a random direction
+    }
+  };
+})();
