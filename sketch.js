@@ -325,3 +325,16 @@ function drawScore() {
   text(opponentScore, width / 2 + 350, 20);
   text(yourScore, width / 2 - 350, 20);
 }
+
+function keyPressed() {
+  //if the enter key is pressed, move to the next level. If the level is above 5, then it will go back to the start(home screen).
+  if (keyCode === ENTER) {
+    if (level = 5) {
+      clear();
+      level += 1;
+      if (level > 5) {
+        level = 0;
+      }
+    }
+  }
+}
