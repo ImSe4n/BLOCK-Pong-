@@ -617,3 +617,8 @@ function changeBG() {
   val += 1;
   print(val);
 }
+
+//reset the value to this preset value(2)
+function resetBG() {
+  val = 2;
+}
