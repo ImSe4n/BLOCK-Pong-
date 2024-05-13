@@ -493,3 +493,25 @@ function noButton() {
   yourScore = 0;
   opponentScore = 0;
 }
+
+//button for pressing yes
+function yesButton() {
+  if (
+    mouseX > bx + 100 - boxSize &&
+    mouseX < bx + 100 + boxSize &&
+    mouseY > by + 140 - boxSize / 2 &&
+    mouseY < by + 140 + boxSize / 2
+  ) {
+    overBox7 = true;
+    stroke(255);
+    fill(173, 255, 47);
+  } else {
+    stroke(156, 39, 176);
+    fill(173, 255, 47);
+    overBox7 = false;
+  }
+  // Draw the box
+  rect(bx + 100, by + 140, boxSize, boxSize / 2);
+  textSize(20);
+  text("Yes", bx + 100, by + 145);
+}
