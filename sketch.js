@@ -594,3 +594,20 @@ var onStart = (function() {
     }
   };
 })();
+
+//when the score of player = the set one, 
+function onWin() {
+  if (level === 1 && yourScore === val) {
+    level = 2;
+    spriteBalls.setSpeed(0);
+    yourScore = 0
+  } else if (level === 4 && yourScore === val) {
+    level = 5
+    spriteBalls.setSpeed(0);
+    yourScore = 0
+  } else if (opponentScore === val) {
+    spriteBalls.setSpeed(0);
+    level = 3
+    opponentScore = 0
+  }
+}
