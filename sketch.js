@@ -382,3 +382,25 @@ function boxEasy() {
   textSize(20);
   text("Easy", bx, by + 75);
 }
+
+//normal box
+function boxNormal() {
+  if (
+    mouseX > bx - boxSize &&
+    mouseX < bx + boxSize &&
+    mouseY > by + 140 - boxSize / 2 &&
+    mouseY < by + 140 + boxSize / 2
+  ) {
+    overBox3 = true;
+    stroke(255);
+    fill(244, 122, 158);
+  } else {
+    stroke(156, 39, 176);
+    fill(244, 122, 158);
+    overBox3 = false;
+  }
+  // Draw the box
+  rect(bx, by + 140, boxSize, boxSize / 2);
+  textSize(20);
+  text("Normal", bx, by + 145);
+}
