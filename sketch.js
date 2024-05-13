@@ -425,3 +425,24 @@ function boxHard() {
   textSize(20);
   text("Hard", bx, by + 215);
 }
+//box for "impossible" options
+function boxImpossible() {
+  if (
+    mouseX > bx - boxSize &&
+    mouseX < bx + boxSize &&
+    mouseY > by + 280 - boxSize / 2 &&
+    mouseY < by + 280 + boxSize / 2
+  ) {
+    overBox5 = true;
+    stroke(255);
+    fill(244, 122, 158);
+  } else {
+    stroke(156, 39, 176);
+    fill(244, 122, 158);
+    overBox5 = false;
+  }
+  // Draw the box
+  rect(bx, by + 280, boxSize, boxSize / 2);
+  textSize(20);
+  text("Impossible", bx, by + 285);
+}
