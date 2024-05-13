@@ -469,3 +469,27 @@ function boxConfigureOptions() {
   noFill();
   text("Configure Options", cx + 2, cy);
 }
+
+function noButton() {
+  if (
+    mouseX > bx - 100 - boxSize &&
+    mouseX < bx - 100 + boxSize &&
+    mouseY > by + 140 - boxSize / 2 &&
+    mouseY < by + 140 + boxSize / 2
+  ) {
+    overBox6 = true;
+    overBox = false;
+    stroke(255);
+    fill(220, 20, 60);
+  } else {
+    stroke(156, 39, 176);
+    fill(220, 20, 60);
+    overBox6 = false;
+  }
+  // Draw the box
+  rect(bx - 100, by + 140, boxSize, boxSize / 2);
+  textSize(20);
+  text("No", bx - 100, by + 145);
+  yourScore = 0;
+  opponentScore = 0;
+}
