@@ -404,3 +404,24 @@ function boxNormal() {
   textSize(20);
   text("Normal", bx, by + 145);
 }
+//box for hard difficulty
+function boxHard() {
+  if (
+    mouseX > bx - boxSize &&
+    mouseX < bx + boxSize &&
+    mouseY > by + 210 - boxSize / 2 &&
+    mouseY < by + 210 + boxSize / 2
+  ) {
+    overBox4 = true;
+    stroke(255);
+    fill(244, 122, 158);
+  } else {
+    stroke(156, 39, 176);
+    fill(244, 122, 158);
+    overBox4 = false;
+  }
+  // Draw the box
+  rect(bx, by + 210, boxSize, boxSize / 2);
+  textSize(20);
+  text("Hard", bx, by + 215);
+}
