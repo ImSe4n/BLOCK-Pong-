@@ -1,27 +1,24 @@
-/*Template for p5 Play library
-Courtney Edwards - May 2021
-This file shows an example for a default sprite*/
-
-//define variables
+//Block Pong Game June 2022
+//By Sean
+//set necessary variables
 let val = 2
 var bx = 400;
 var by = 230;
 var cx = 60;
 var cy = 100;
 let boxSize = 50;
-
-//level variables
+//variable that sets which level the game is on
 var level = 0;
 var boxSprite;
 var mousePosition;
 var spriteBalls;
 var padWidth = 12;
 var ballDiameter = 15;
-var oppenentScore = 0;
+var opponentScore = 0;
 var timeGame = 8;
 var spriteBot;
-var speedBot = 5;
-let frictionBot = 0.2;
+let speedBot = 5; //set initial Bot speed (magnitude of velocity)
+let frictionBot = 0.2; //set initial Bot friction (force between background and sprite)
 var padLength = 120;
 let stupidSlider = false;
 var yourScore = 0;
@@ -37,13 +34,12 @@ let buttonReset;
 let overBox8 = false;
 let rightLevel = false;
 
-//preload ball and block animations
+//preload function for ball and block animation
 function preload() {
   ballImage = loadImage('Ball.png');
   fadingBlock = loadAnimation('Block1.png', 'Block1.png', 'Block2.png', 'Block2.png', 'Block3.png', 'Block3.png', 'Block4.png', 'Block4.png', 'Block5.png', 'Block5.png', 'Block6.png', 'Block6.png', 'Block7.png', 'Block7.png', 'Block8.png', 'Block8.png', 'Block9.png', 'Block9.png', 'Block10.png', 'Block10.png', 'Block11.png', 'Block11.png', 'Block12.png', 'Block12.png', "Block13.png", "Block13.png");
 }
 
-//setup
 function setup() {
   createCanvas(800, 600);
   rectMode(RADIUS);
@@ -80,6 +76,7 @@ function setup() {
   lotsOfBlocks3.setCollider("circle", 0, 0, 30);
   spriteBalls.bounce(lotsOfBlocks3);
 }
+
 
 function draw() {
   background(255, 255, 255);
@@ -223,7 +220,6 @@ function draw() {
     textSize(40);
     text("Congrats!! \n Press Enter \n to try again", 30, 30);
   }
-
 }
 
 //function to show the speed of the ball
@@ -273,6 +269,7 @@ function spritePosition() {
   }
 }
 
+
 function ballMovement() {
   spriteBalls.setSpeed(timeGame);
   //makes sprite2 bounce of the borders and give it a random velocity
@@ -318,7 +315,6 @@ function ballMovement() {
 function time() {
   timeGame = timeGame + 0.01
 }
-
 //draw the score of player and opponent
 function drawScore() {
   textSize(25);
@@ -360,7 +356,6 @@ function boxBeginner() {
   textSize(20);
   text("Beginner", bx, by + 5);
 }
-
 //easy box 
 function boxEasy() {
   if (
@@ -382,7 +377,6 @@ function boxEasy() {
   textSize(20);
   text("Easy", bx, by + 75);
 }
-
 //normal box
 function boxNormal() {
   if (
@@ -446,7 +440,6 @@ function boxImpossible() {
   textSize(20);
   text("Impossible", bx, by + 285);
 }
-
 //box for the options
 function boxConfigureOptions() {
   if (
@@ -469,7 +462,7 @@ function boxConfigureOptions() {
   noFill();
   text("Configure Options", cx + 2, cy);
 }
-
+//Button for pressing no
 function noButton() {
   if (
     mouseX > bx - 100 - boxSize &&
@@ -493,7 +486,6 @@ function noButton() {
   yourScore = 0;
   opponentScore = 0;
 }
-
 //button for pressing yes
 function yesButton() {
   if (
@@ -515,7 +507,6 @@ function yesButton() {
   textSize(20);
   text("Yes", bx + 100, by + 145);
 }
-
 //mousepressed function for if the mouse is over the box, it will set the difficulty, same as if pressing no, level will be reset to home screen. 
 function mousePressed() {
   if (overBox === true) {
@@ -575,7 +566,6 @@ function configureSlider() {
     // sliderBotFriction.style("width", "100px"); // set slider width at 100 pixels wide
   }
 }
-
 //to remove the configure slider
 function sliderRemoval() {
   turnOnSlider = false;
@@ -583,6 +573,7 @@ function sliderRemoval() {
     sliderBotSpeed.remove();
   }
 }
+
 
 //set the speed of ball at the beginning
 var onStart = (function() {
@@ -611,13 +602,11 @@ function onWin() {
     opponentScore = 0
   }
 }
-
 //set the value of lives
 function changeBG() {
   val += 1;
   print(val);
 }
-
 //reset the value to this preset value(2)
 function resetBG() {
   val = 2;
