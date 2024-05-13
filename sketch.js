@@ -360,3 +360,25 @@ function boxBeginner() {
   textSize(20);
   text("Beginner", bx, by + 5);
 }
+
+//easy box 
+function boxEasy() {
+  if (
+    mouseX > bx - boxSize &&
+    mouseX < bx + boxSize &&
+    mouseY > by + 70 - boxSize / 2 &&
+    mouseY < by + 70 + boxSize / 2
+  ) {
+    overBox2 = true;
+    stroke(255);
+    fill(244, 122, 158);
+  } else {
+    stroke(156, 39, 176);
+    fill(244, 122, 158);
+    overBox2 = false;
+  }
+  // Draw the box
+  rect(bx, by + 70, boxSize, boxSize / 2);
+  textSize(20);
+  text("Easy", bx, by + 75);
+}
